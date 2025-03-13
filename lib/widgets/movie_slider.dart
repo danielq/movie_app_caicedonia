@@ -35,7 +35,28 @@ class _MoviePoster extends StatelessWidget {
       width: 130,
       height: 190,
       color: Colors.greenAccent,
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: FadeInImage(
+              placeholder: AssetImage('assets/no-image.jpg'),
+              image: NetworkImage('https://placehold.jp/300x400.png'),
+              width: 130,
+              height: 170,
+              fit: BoxFit.cover,
+            ),
+          ),
+          SizedBox(height: 5),
+          Text(
+            'Star Wars la venganza de los sith remasterizado',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+          )
+        ],
+      ),
     );
   }
 }
