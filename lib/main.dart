@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_caicedonia/screens/screens.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,15 +9,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Peliculas',
+      initialRoute: 'home',
+      routes: {'home': (_) => HomeScreen(), 'details': (_) => DetailsScreen()},
+      // tena principal de la aplicacion
+      theme: ThemeData.light()
+          .copyWith(appBarTheme: AppBarTheme(color: Colors.lightBlue)),
     );
   }
 }
