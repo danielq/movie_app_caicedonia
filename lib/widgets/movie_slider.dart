@@ -6,7 +6,6 @@ class MovieSlider extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 250,
-      color: Colors.red,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -34,18 +33,21 @@ class _MoviePoster extends StatelessWidget {
     return Container(
       width: 130,
       height: 190,
-      color: Colors.greenAccent,
       margin: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: FadeInImage(
-              placeholder: AssetImage('assets/no-image.jpg'),
-              image: NetworkImage('https://placehold.jp/300x400.png'),
-              width: 130,
-              height: 170,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, 'details',
+                arguments: 'movie-instance'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: FadeInImage(
+                placeholder: AssetImage('assets/no-image.jpg'),
+                image: NetworkImage('https://placehold.jp/300x400.png'),
+                width: 130,
+                height: 170,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(height: 5),
